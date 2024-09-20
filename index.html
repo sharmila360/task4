@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <form>
+            <label>Username</label>
+            <input type="text" placeholder="username">
+            <label>Password</label>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password">
+                <span id="togglePassword" class="eye-icon">
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <p class="para-2">Not have an account? <a href="signup.html">Sign Up</a></p>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        const eyeIcon = togglePassword.querySelector('i');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            eyeIcon.classList.toggle('fa-eye');
+            eyeIcon.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
